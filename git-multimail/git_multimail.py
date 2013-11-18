@@ -2253,13 +2253,7 @@ class Push(object):
         unhandled_sha1s = set(self.get_new_commits())
         for change in self.changes:
             # Check if we've got anyone to send to
-            if not change.recipients:
-                sys.stderr.write(
-                    '*** no recipients configured so no email will be sent\n'
-                    '*** for %r update %s->%s\n'
-                    % (change.refname, change.old.sha1, change.new.sha1,)
-                    )
-            else:
+            if change.recipients:
                 sys.stderr.write('Sending notification emails to: %s\n' % (change.recipients,))
                 mailer.send(change.generate_email(self, body_filter), change.recipients)
 
