@@ -50,6 +50,32 @@ import git_multimail
 #"""
 
 
+REVISION_HEADER_TEMPLATE = """\
+To: %(recipients)s
+Subject: %(oneline)s
+MIME-Version: 1.0
+Content-Type: text/plain; charset=%(charset)s
+Content-Transfer-Encoding: 8bit
+From: %(fromaddr)s
+Reply-To: %(reply_to)s
+In-Reply-To: %(reply_to_msgid)s
+References: %(reply_to_msgid)s
+X-Git-Repo: %(repo_shortname)s
+X-Git-Refname: %(refname)s
+X-Git-Reftype: %(refname_type)s
+X-Git-Rev: %(rev)s
+Auto-Submitted: auto-generated
+"""
+
+REVISION_INTRO_TEMPLATE = """\
+This is an automated email from the git hooks/post-receive script.
+
+%(pusher)s pushed a commit to %(refname_type)s %(short_refname)s
+in repository %(repo_shortname)s.
+
+"""
+
+
 # Specify which "git config" section contains the configuration for
 # git-multimail:
 config = git_multimail.Config('multimailhook')
