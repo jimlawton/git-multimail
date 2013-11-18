@@ -68,8 +68,7 @@ Auto-Submitted: auto-generated
 """
 
 REVISION_INTRO_TEMPLATE = """\
-%(pusher)s pushed a commit to %(refname_type)s %(short_refname)s
-in repository %(repo_shortname)s.
+%(pusher)s pushed a commit to %(refname_type)s %(short_refname)s in repository %(repo_shortname)s.
 
 """
 
