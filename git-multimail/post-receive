@@ -50,7 +50,7 @@ import git_multimail
 #"""
 
 
-REVISION_HEADER_TEMPLATE = """\
+git_multimail.REVISION_HEADER_TEMPLATE = """\
 To: %(recipients)s
 Subject: %(oneline)s
 MIME-Version: 1.0
@@ -67,7 +67,7 @@ X-Git-Rev: %(rev)s
 Auto-Submitted: auto-generated
 """
 
-REVISION_INTRO_TEMPLATE = """\
+git_multimail.REVISION_INTRO_TEMPLATE = """\
 %(pusher)s pushed a commit to %(refname_type)s %(short_refname)s in repository %(repo_shortname)s.
 
 """
