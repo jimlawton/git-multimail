@@ -52,7 +52,7 @@ import git_multimail
 
 git_multimail.REVISION_HEADER_TEMPLATE = """\
 To: %(recipients)s
-Subject: %(oneline)s
+Subject: %(emailprefix)s%(num)02d/%(tot)02d: %(oneline)s
 MIME-Version: 1.0
 Content-Type: text/plain; charset=%(charset)s
 Content-Transfer-Encoding: 8bit
